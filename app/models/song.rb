@@ -14,8 +14,8 @@ class Song < ActiveRecord::Base
       self.artist = Artist.find_by(name: "Drake")
     else
       new_artist = Artist.new(name: "Drake")
-      new_artist.save
       new_artist.songs.add(self)
+      new_artist.save
     end
   end
 end
