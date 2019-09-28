@@ -14,7 +14,7 @@ class Song < ActiveRecord::Base
       self.artist = Artist.all.map{|artist| artist.name = "Drake"}.first
     else
       Artist.create(name: "Drake")
-      self.artist = Artist.all.map{|artist| artist.name = "Drake"}.first
+      self.artist = Artist.where("name = 'Drake'")
     end
   end
 end
