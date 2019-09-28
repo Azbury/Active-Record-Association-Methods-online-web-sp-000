@@ -19,7 +19,7 @@ class Artist < ActiveRecord::Base
     self.songs.each do |song|
       if !genre_array.include?(song.genre)
         count += 1
-        genre_array < song.genre
+        genre_array << song.genre
       end
     end
     count
